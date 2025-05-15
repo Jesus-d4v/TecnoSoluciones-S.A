@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(22, 142, 207, 0.52); 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(7, 67, 247, 0.5); 
+}
+
+#navbarNav {
+    background-color: rgba(255, 255, 255, 0.68); 
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#navbarNav .nav-link {
+    color: #0078f9;
+    font-weight: 600;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+#navbarNav .nav-link:hover {
+    color: rgba(55, 109, 167, 0.78); 
+    text-decoration: none;
+}
+
+#navbarNav .nav-item:last-child .nav-link {
+    margin-right: 0;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-color: rgba(91, 161, 237, 0.56); 
+    border-radius: 3px;
+}
+
+#titulo {
+    color: rgba(66, 141, 222, 0.58); 
+}
+.togglePassword{
+    transition: transform 0.2s;
+}
+

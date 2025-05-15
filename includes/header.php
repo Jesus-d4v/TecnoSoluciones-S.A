@@ -1,48 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Registrar Tarea</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TecnoSoluciones S.A 👨🏻‍💻</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">  
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="bg-light">
+<body>
 
-<div class="container mt-5">
-    <div class="card shadow-lg">
-        <div class="card-header bg-primary text-white">
-            <h4 class="mb-0">Registrar Nueva Tarea</h4>
-        </div>
-        <div class="card-body">
-            <form action="guardar_tarea.php" method="POST">
-                <div class="mb-3">
-                    <label for="nombre_tarea" class="form-label">Nombre de la tarea</label>
-                    <input type="text" class="form-control" id="nombre_tarea" name="nombre_tarea" required>
-                </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.php" id="titulo">TecnoSoluciones S.A 👨🏻‍💻</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="mb-3">
-                    <label for="descripcion" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
-                </div>
-
-                <div class="mb-3">
-                    <label for="fecha_inicio" class="form-label">Fecha de inicio</label>
-                    <input type="datetime-local" class="form-control" id="fecha_inicio" name="fecha_inicio" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="fecha_fin" class="form-label">Fecha de fin</label>
-                    <input type="datetime-local" class="form-control" id="fecha_fin" name="fecha_fin" required>
-                </div>
-
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-success">Guardar Tarea</button>
-                </div>
-            </form>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.php">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="register.php">Registrarse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="help.php">Ayuda y Comentarios</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</div>
-
-<!-- Bootstrap JS (opcional) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script></body>
 </html>
