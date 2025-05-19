@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'includes/database.php'; 
+include 'includes/database.php';
 
 if (isset($_GET['logout'])) {
     session_unset();
@@ -12,8 +12,8 @@ if (isset($_GET['logout'])) {
 $mensaje = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $usuario = htmlspecialchars(trim($_POST['usuario']));
-    $password = htmlspecialchars(trim($_POST['password']));
+    $usuario = trim($_POST['usuario']);
+    $password = trim($_POST['password']);
 
     if (!empty($usuario) && !empty($password)) {
         $stmt = $conn->prepare("SELECT contrasena FROM login WHERE usuario = ?");
@@ -24,24 +24,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->num_rows > 0) {
             $stmt->bind_result($hashed_password);
             $stmt->fetch();
-            if (password_verify($password, $hashed_password)) {
+            // Si la contraseña está hasheada, usa password_verify; si no, compara directamente
+            if (password_verify($password, $hashed_password) || $password === $hashed_password) {
                 $_SESSION['usuario'] = $usuario;
-                header("Location: pagina_principal.php"); 
+                header("Location: pagina_principal.php");
                 exit();
             } else {
-                $mensaje = "<div class='alert alert-danger'>Contraseña incorrecta.</div>";
+                $mensaje = "<div class='alert alert-danger'>Datos incorrectos.</div>";
             }
         } else {
             $mensaje = "<div class='alert alert-danger'>Usuario no encontrado.</div>";
         }
-
         $stmt->close();
     } else {
         $mensaje = "<div class='alert alert-danger'>Por favor, complete todos los campos.</div>";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -50,23 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-<style>
-    body {
-        background-image: url('assets/img/loginfondo.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        min-height: 100vh;
-    }
-    .container {
-        background-color: rgba(73, 179, 236, 0.38); 
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.72);
-    }
-</style>
 </head>
-<body >
+<body">
     <div class="container mt-5" style="max-width: 400px;">
         <h2 class="text-center">Iniciar Sesión</h2>
         <?php if (!empty($mensaje)) echo $mensaje; ?>

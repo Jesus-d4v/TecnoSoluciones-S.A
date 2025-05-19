@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php" id="titulo">TecnoSoluciones S.A 👨🏻‍💻</a>
@@ -22,10 +23,7 @@
             <a class="nav-link" href="index.php">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Iniciar sesión</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="register.php">Registrarse</a>
+            <a class="nav-link" href="index.php">Cerrar sesión</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="help.php">Ayuda y Comentarios</a>
