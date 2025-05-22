@@ -25,7 +25,7 @@
             <a class="nav-link" href="login.php">Iniciar sesión</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="register.php">Registrarse</a>
+            <a class="nav-link" href="registro.php">Registrarse</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="help.php">Ayuda y Comentarios</a>

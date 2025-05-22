@@ -70,20 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <button type="submit" class="btn btn-primary w-100">Ingresar</button>
         </form>
-        <script>
-            document.getElementById("togglePassword").addEventListener("click", function () {
-                const passwordInput = document.getElementById("password");
-                const icono = document.getElementById("icono-ojo");
-                this.style.transform = "scale(1.2)";
-                setTimeout(() => this.style.transform = "scale(1)", 100);
-
-                const mostrar = passwordInput.type === "password";
-                passwordInput.type = mostrar ? "text" : "password";
-
-                icono.classList.toggle("bi-eye");
-                icono.classList.toggle("bi-eye-slash");
-            });
-        </script>
+        <script src="assets/js/scripts.js"></script>
     </div>
 </body>
 </html>
