@@ -2,7 +2,7 @@
 session_start();
 include 'includes/database.php';
 
-if (isset($_GET['logout'])) {
+if (isset($_GET['cerrar_sesion'])) {
     session_unset();
     session_destroy();
     header("Location: index.php");

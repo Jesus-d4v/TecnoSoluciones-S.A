@@ -2,6 +2,13 @@
 include 'includes/heder_tarea.php';
 include 'includes/database.php';
 
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tarea = $_POST['tarea'];
     $descripcion = $_POST['descripcion'];

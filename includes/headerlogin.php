@@ -22,16 +22,16 @@
           <li class="nav-item">
             <a class="nav-link" href="tareas.php">Crear tarea</a>
           </li><li class="nav-item">
-            <a class="nav-link" href="pagina_principal.php">Crear proyectos</a>
+            <a class="nav-link" href="proyectos.php">Crear proyectos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pagina_principal.php">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Cerrar sesión</a>
+            <a class="nav-link" href="login.php?cerrar_sesion=1">Cerrar sesión</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="help.php">Ayuda y Comentarios</a>
+            <a class="nav-link" href="ayuda.php">Ayuda y Comentarios</a>
           </li>
         </ul>
       </div>

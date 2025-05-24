@@ -20,10 +20,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Cerrar</a>
+            <a class="nav-link" href="pagina_principal.php">Cerrar</a>
             </li>
           <li class="nav-item">
-            <a class="nav-link" href="help.php">Ayuda y Comentarios</a>
+            <a class="nav-link" href="ayuda.php">Ayuda y Comentarios</a>
           </li>
         </ul>
       </div>
