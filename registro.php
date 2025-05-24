@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="mb-3">
                 <label class="form-label">Correo Gmail</label>
-                <input type="email" class="form-control" name="gmail" required placeholder="ejemplo@gmail.com">
+                <input type="email" class="form-control" name="gmail" required placeholder="tecno@gmail.com">
             </div>
             <div class="mb-3">
                 <label class="form-label">Teléfono</label>
