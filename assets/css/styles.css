@@ -6,6 +6,7 @@ body {
     min-height: 100vh;
 }
 
+
 .navbar {
     box-shadow: 0 4px 6px rgba(7, 67, 247, 0.5); 
 }
@@ -50,7 +51,7 @@ body {
     box-shadow: 0 0 4px #0003;
 }
 .container {
-    background-color: rgba(73, 179, 236, 0.38);
+    background-color: rgba(73, 179, 236, 0.527);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.72);
@@ -58,4 +59,20 @@ body {
 #icono-ojo {
     color: #000 ;
     font-size: 1.3em;
+}
+
+.card {
+    border: 1px solid #5c5b5b; 
+    border-radius: 10px; 
+    padding: 15px; 
+    background-color: #f9f9f9; 
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.349); 
+    background-color:rgba(170, 211, 255, 0.692) ;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }

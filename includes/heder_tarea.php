@@ -20,16 +20,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="tareas.php">Crear tarea</a>
-          </li><li class="nav-item">
-            <a class="nav-link" href="pagina_principal.php">Crear proyectos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pagina_principal.php">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Cerrar sesión</a>
-          </li>
+            <a class="nav-link" href="index.php">Cerrar</a>
+            </li>
           <li class="nav-item">
             <a class="nav-link" href="help.php">Ayuda y Comentarios</a>
           </li>
