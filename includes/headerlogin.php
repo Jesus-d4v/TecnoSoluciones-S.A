@@ -25,6 +25,9 @@
             <a class="nav-link" href="proyectos.php">Crear proyectos</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="informe.php">Informe Semanal</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="pagina_principal.php">Inicio</a>
           </li>
           <li class="nav-item">

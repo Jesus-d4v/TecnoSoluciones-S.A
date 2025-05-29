@@ -24,9 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if ($stmt->num_rows > 0) {
                         $mensaje = "<div class='alert alert-danger'>El usuario ya existe.</div>";
                     } else {
-                        // Inserta el nuevo usuario SIN hash
+                        // Hashear la contraseña antes de guardar
+                        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
                         $stmt = $conn->prepare("INSERT INTO login (usuario, contrasena, gmail, telefono) VALUES (?, ?, ?, ?)");
-                        $stmt->bind_param("ssss", $usuario, $password, $gmail, $telefono);
+                        $stmt->bind_param("ssss", $usuario, $passwordHash, $gmail, $telefono);
                         if ($stmt->execute()) {
                             $mensaje = "<div class='alert alert-success'>Registro exitoso. <a href='login.php'>Iniciar sesión</a></div>";
                         } else {
@@ -48,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

@@ -1,6 +1,6 @@
 <?php
 
-include 'includes/header.php';
+include 'includes/heder_tarea.php';
 include 'includes/database.php';
 
 // Procesar formulario para agregar proyecto

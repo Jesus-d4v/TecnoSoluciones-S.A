@@ -24,8 +24,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->num_rows > 0) {
             $stmt->bind_result($hashed_password);
             $stmt->fetch();
-            // Si la contraseña está hasheada, usa password_verify; si no, compara directamente
-            if (password_verify($password, $hashed_password) || $password === $hashed_password) {
+            if (password_verify($password, $hashed_password)) {
+                $_SESSION['usuario'] = $usuario;
+                header("Location: pagina_principal.php");
+                exit();
+            } elseif ($password === $hashed_password) {
+                $nuevo_hash = password_hash($password, PASSWORD_DEFAULT);
+                $update = $conn->prepare("UPDATE login SET contrasena = ? WHERE usuario = ?");
+                $update->bind_param("ss", $nuevo_hash, $usuario);
+                $update->execute();
+                $update->close();
+
                 $_SESSION['usuario'] = $usuario;
                 header("Location: pagina_principal.php");
                 exit();

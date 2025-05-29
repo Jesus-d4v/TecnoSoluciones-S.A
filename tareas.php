@@ -12,12 +12,13 @@ if (!isset($_SESSION['usuario'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tarea = $_POST['tarea'];
     $descripcion = $_POST['descripcion'];
+    $fecha_inicio = $_POST['fecha_inicio'];
     $fecha_limite = $_POST['fecha_limite'];
 
-    $sql = "INSERT INTO tareas (tarea, descripcion, fecha_limite) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO tareas (tarea, descripcion,fecha_inicio , fecha_limite) VALUES (?, ?, ?,?)";
     $stmt = $conn->prepare($sql);
     if ($stmt) {
-        $stmt->bind_param("sss", $tarea, $descripcion, $fecha_limite);
+        $stmt->bind_param("ssss", $tarea, $descripcion, $fecha_inicio,$fecha_limite);
         if ($stmt->execute()) {
             $mensaje = '<div class="alert alert-success">Tarea creada correctamente.</div>';
         } else {
@@ -41,6 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="mb-3">
             <label for="descripcion" class="form-label">Descripción</label>
             <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+        </div>
+         <div class="mb-3">
+            <label for="fecha_inicio" class="form-label">Fecha Inicio</label>
+            <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" required> 
         </div>
         <div class="mb-3">
             <label for="fecha_limite" class="form-label">Fecha Límite</label>
