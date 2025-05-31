@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 session_start();
 if (!isset($_SESSION['usuario'])) {
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmtProyectos->execute();
     $resultProyectos = $stmtProyectos->get_result();
 
-    
+
     $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdf->Cell(0,10,"Tareas",0,1);
     $pdf->SetFont('Arial','',10);
     while($row = $resultTareas->fetch_assoc()) {
-        $pdf->Cell(0,8,"- {$row['nombre']} ({$row['fecha_limite']})",0,1);
+        $pdf->Cell(0,8,"- {$row['tarea']} ({$row['fecha_limite']})",0,1);
     }
 
     $pdf->SetFont('Arial','B',12);
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdf->Output('I', "informe_semanal_{$year}_semana_{$week}.pdf");
     exit();
 }
-include 'includes/header.php';
+include 'includes/heder_tarea.php';
 ?>
 <div class="container mt-4">
     <h2>Generar Informe Semanal</h2>
