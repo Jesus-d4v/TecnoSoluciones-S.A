@@ -28,7 +28,7 @@
             <a class="nav-link" href="registro.php">Registrarse</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="help.php">Ayuda y Comentarios</a>
+            <a class="nav-link" href="ayuda.php">Ayuda y Comentarios</a>
           </li>
         </ul>
       </div>
