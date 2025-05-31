@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmtProyectos->execute();
     $resultProyectos = $stmtProyectos->get_result();
 
-    // Generar PDF
+    
     $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
