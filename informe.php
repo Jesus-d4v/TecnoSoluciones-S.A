@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $week = intval($_POST['week']);
     list($fecha_inicio, $fecha_fin) = getWeekRange($year, $week);
 
-    $stmtTareas = $conn->prepare("SELECT * FROM tareas WHERE fecha_inicio BETWEEN ? AND ?");
+    $stmtTareas = $conn->prepare("SELECT * FROM tareas WHERE fecha_limite BETWEEN ? AND ?");
     $stmtTareas->bind_param("ss", $fecha_inicio, $fecha_fin);
     $stmtTareas->execute();
     $resultTareas = $stmtTareas->get_result();
@@ -43,22 +43,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdf->Cell(0,10,"Tareas",0,1);
     $pdf->SetFont('Arial','',10);
     while($row = $resultTareas->fetch_assoc()) {
-        $pdf->Cell(0,8,"- {$row['nombre']} ({$row['fecha']})",0,1);
+        $pdf->Cell(0,8,"- {$row['nombre']} ({$row['fecha_limite']})",0,1);
     }
 
     $pdf->SetFont('Arial','B',12);
     $pdf->Cell(0,10,"Proyectos",0,1);
     $pdf->SetFont('Arial','',10);
     while($row = $resultProyectos->fetch_assoc()) {
-        $pdf->Cell(0,8,"- {$row['nombre']} ({$row['fecha_inicio']})",0,1);
+        $pdf->Cell(0,8,"- {$row['titulo']} ({$row['fecha']})",0,1);
     }
 
     $reporte_generado = true;
     $pdf->Output('I', "informe_semanal_{$year}_semana_{$week}.pdf");
     exit();
 }
+include 'includes/header.php';
 ?>
-<?php include 'includes/header.php'; ?>
 <div class="container mt-4">
     <h2>Generar Informe Semanal</h2>
     <form method="post">

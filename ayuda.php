@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['comentario']) && !em
             Si tienes dudas sobre el uso del sistema, puedes consultar el manual de usuario o contactar al soporte técnico.
         </p>
         <ul>
-            <li>Manual de usuario: <a href="manual_usuario.pdf" target="_blank">Descargar PDF</a></li>
+            <li>Manual de usuario: <a href="Informe_Soporte_Tecnico_2025-001 (1).pdf" target="_blank">Descargar PDF</a></li>
             <li>Correo de soporte: <a href="mailto:morevierajesusdavid@gmail.com">soporte@tecnosoluciones.com</a></li>
         </ul>
     </div>

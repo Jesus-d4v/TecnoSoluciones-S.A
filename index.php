@@ -44,3 +44,4 @@ include 'includes/header.php';
         <a href="login.php" class="btn btn-secondary">Iniciar Sesión</a>
     </div>
 </div>
+ <?php include 'includes/footer.php'; ?>
